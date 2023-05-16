@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Provicali';
+    src: url('Provicali.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor1: #ff9000;
+    --cor2: #d17600;
+    --cor3: #ffffff;
+    --sombra: #ebebeb;
+    --sombral: #d176005b;
+    --fonte1: "Provicali", sans-serif;
+    --shadow1: 0px 3px var(--sombra), 0px 8px var(--sombral);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte1);
+    -webkit-user-select:none;
+    -moz-user-select: -moz-none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body img {
+    height: 600px;
+}
+
+.ui-spawn {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 620px;
+    width: 700px;
+}
+
+.ui-opcoes {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    left: -75px;
+    top: 18px;
+    transform: rotate(4deg);
+    gap: 30px;
+}
+
+.ui-opcoes #spawn1 {
+    position: relative;
+    transform: rotate(-0.3deg);
+    top: 8px;
+}
+
+.ui-opcoes #spawn3 {
+    position: relative;
+    top: -10px;
+}
+
+.ui-opcoes #spawn4 {
+    position: relative;
+    top: -10px;
+}
+
+.ui-opcoes #ultima {
+    position: relative;
+    top: -1px;
+    font-size: 28px;
+    line-height: 24px;
+    transform: rotate(-4deg);
+}
+
+.texto {
+    position: relative;
+    top: 25px;
+    text-shadow: 0px 1.5px 0 #967171, 2px 1px 2px rgba(36,36,36,0.59);
+}
+
+.ui-opcoes h1 {
+    position: relative;
+    color: white;
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.ui-opcoes h2 {
+    color: white;
+    position: relative;
+    top: -15px;
+    font-size: 47px;
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+.ui-opcoes button {
+    width: 258px;
+    height: 58px;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: var(--cor3);
+    border-radius: 5px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.247);
+    cursor: pointer;
+}
+
+.ui-opcoes button a {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .05);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 400;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-shadow: 0px 1.5px 0 #967171, 2px 1px 2px rgba(36,36,36,0.59);
+    transition: all .3s ease-in-out;  
+}
+
+.ui-opcoes button:hover a {
+    letter-spacing: 3px;
+}
+  
+.ui-opcoes button a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.096), transparent);
+    transform: skewX(40deg) translateX(0);
+    transition: all .5s ease-out;
+}
+  
+.ui-opcoes button:hover a::before {
+    transform: skewX(40deg) translateX(200%);
+}

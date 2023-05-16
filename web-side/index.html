@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="bg.png" alt="">
+    <div class="ui-spawn">
+        <div class="ui-opcoes">
+            <div class="texto">
+                <h1>ESCOLHA ONDE</h1>
+                <h2>ACORDAR</h2>
+            </div>
+            <button class="spawn" id="spawn1" data-spawn="praca"><a>Garagem Praça</a></button>
+            <button class="spawn" id="spawn2" data-spawn="vaspucci"><a>VESPUCCI</a></button>
+            <button class="spawn" id="spawn3" data-spawn="paleto"><a>Paleto</a></button>
+            <button class="spawn" id="spawn4" data-spawn="hospital"><a>Hospital</a></button>
+            <button class="spawnNow" id="ultima" data-spawn="ultima"><a>última localização</a></button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(() => {
+            window.addEventListener('message', (event) => {
+                if (event.data.display) {
+                    $('.body').show();
+                } else {
+                    $('.body').hide();
+                }
+            })
+
+            $('li').click(function () {
+                $.post('http://vrp_login/spawn', JSON.stringify({ choice: $(this).data('spawn') }));
+            });
+        })
+    </script>
+</body>
+
+</html>
